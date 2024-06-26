@@ -1,13 +1,12 @@
 const Desklet = imports.ui.desklet;
 const St = imports.gi.St;
 const Mainloop = imports.mainloop;
-const GLib = imports.gi.GLib;
 
-function BinClockDesklet(metadata, desklet_id) {
+function JsonClockDesklet(metadata, desklet_id) {
   this._init(metadata, desklet_id);
 }
 
-BinClockDesklet.prototype = {
+JsonClockDesklet.prototype = {
   __proto__: Desklet.Desklet.prototype,
 
   _init: function (metadata, desklet_id) {
@@ -21,7 +20,6 @@ BinClockDesklet.prototype = {
 
   setupUI: function () {
     this._text = new St.Label({
-      text: '00000 : 000000 : 000000',
       style: 'font-size: 10px;',
     });
     this.setContent(this._text);
@@ -113,7 +111,7 @@ BinClockDesklet.prototype = {
     seconds:   ${timeInfo.seconds},
     day:       ${timeInfo.day},
     date:      ${timeInfo.date},
-    ampm:      ${timeInfo.ampm}
+    AM/PM:     ${timeInfo.ampm}
 }`;
 
     this._text.set_text(timeInfoString);
@@ -121,5 +119,5 @@ BinClockDesklet.prototype = {
 };
 
 function main(metadata, desklet_id) {
-  return new BinClockDesklet(metadata, desklet_id);
+  return new JsonClockDesklet(metadata, desklet_id);
 }
