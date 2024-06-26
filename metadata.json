@@ -1,0 +1,8 @@
+{
+    "max-instances": "1",
+    "description": "JSON Formatted Time",
+    "name": "JSON Clock",
+    "version": "0.0",
+    "uuid": "JSONClockDesklet@fur99qan",
+    "author": "fur99qan"
+}
